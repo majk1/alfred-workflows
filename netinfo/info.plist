@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.codeles.alfred.netinfo</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>5B416923-9ADE-4C45-A8D4-887E1D8DDD52</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C64B3522-4768-498E-9F4A-2D9B67C0B4E0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7E8E63A6-6060-4E32-98F5-6D7DC461E99F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6255B17C-5F8B-40C4-AA87-F0D817BA39CF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A420EC6D-EFC8-4088-968B-D3CADA933B15</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E8E63A6-6060-4E32-98F5-6D7DC461E99F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F38418C0-1BA2-4DEA-AB1B-F47D74C778D6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5B416923-9ADE-4C45-A8D4-887E1D8DDD52</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A420EC6D-EFC8-4088-968B-D3CADA933B15</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>CodeLens</string>
+	<key>description</key>
+	<string>Network interface information</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Network info</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>5B416923-9ADE-4C45-A8D4-887E1D8DDD52</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>IP address copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C64B3522-4768-498E-9F4A-2D9B67C0B4E0</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ni</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>query=$1
+
+search=""
+if [ ! -z "$query" ]; then
+	search="-s $query"
+fi
+
+NETLIST=$(./netinfo.py -1 -a $search)
+
+echo '{"items": ['
+ITEM_COUNT=0
+while read -r line; do
+    read IFACE IP NAME &lt;&lt;&lt; "$line"
+    [ $ITEM_COUNT -gt 0 ] &amp;&amp; echo -n ","
+    echo "{"
+    cat &lt;&lt;EOF
+        "arg": "${IFACE}",
+        "title": "${IP}",
+        "subtitle": "${IFACE} - ${NAME}",
+        "text": {
+            "copy": "${PID} ${USER} ${COMMAND}",
+            "largetype": "${PID} ${USER} ${COMMAND}"
+        },
+		"variables": {
+			"iface": "${IFACE}",
+			"name": "#{NAME}"
+		},
+		"mods": {
+			"cmd": {
+				"arg": "${IP}",
+				"subtitle": "Copy IP address"
+			}
+		}
+    }
+EOF
+	let ITEM_COUNT++
+done &lt;&lt;&lt; "${NETLIST}"
+echo ']}'
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Listing available interfaces</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F38418C0-1BA2-4DEA-AB1B-F47D74C778D6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7E8E63A6-6060-4E32-98F5-6D7DC461E99F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>IFACE="${1%% *}"
+FILTER="${1#* }"
+
+if [ "$IFACE" == "$FILTER" ]; then
+	FILTER=""
+fi
+
+NETLIST=$(./netinfo.py -s "$IFACE")
+
+echo '{"items": ['
+ITEM_COUNT=0
+while read -r line; do
+	if [[ "_$FILTER" == "_" || "$line" =~ $FILTER ]]; then
+
+	name="${line%%:*}"
+	value="${line#*: }"
+
+    [ $ITEM_COUNT -gt 0 ] &amp;&amp; echo -n ","
+    echo "{"
+    cat &lt;&lt;EOF
+        "arg": "${value}",
+        "title": "${value}",
+		"subtitle": "${name}",
+        "text": {
+            "copy": "${value}",
+            "largetype": "${value}"
+        },
+		"variables": {
+			"name": "${name}"
+		}
+    }
+EOF
+	let ITEM_COUNT++
+	fi
+done &lt;&lt;&lt; "${NETLIST}"
+echo ']}'
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Listing selected interface</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A420EC6D-EFC8-4088-968B-D3CADA933B15</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>{var:name} copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6255B17C-5F8B-40C4-AA87-F0D817BA39CF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>5B416923-9ADE-4C45-A8D4-887E1D8DDD52</key>
+		<dict>
+			<key>xpos</key>
+			<integer>370</integer>
+			<key>ypos</key>
+			<integer>60</integer>
+		</dict>
+		<key>6255B17C-5F8B-40C4-AA87-F0D817BA39CF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>760</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>7E8E63A6-6060-4E32-98F5-6D7DC461E99F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>A420EC6D-EFC8-4088-968B-D3CADA933B15</key>
+		<dict>
+			<key>xpos</key>
+			<integer>370</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>C64B3522-4768-498E-9F4A-2D9B67C0B4E0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>560</integer>
+			<key>ypos</key>
+			<integer>60</integer>
+		</dict>
+		<key>F38418C0-1BA2-4DEA-AB1B-F47D74C778D6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>60</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

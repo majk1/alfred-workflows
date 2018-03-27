@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.codeles.alfred.proc</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>0AD24F51-8416-47DB-8316-5702F7036E17</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA483AFC-4A46-466D-B9D7-2355C2998064</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>39BDC56A-47C8-4D0E-B28A-71BF31164D24</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA5E09C2-4618-44AA-890A-E46945C4F947</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6C0EA1D3-58EB-4015-948C-131EF34200A7</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A1AC3CF0-5B59-4241-B9CD-6EE6787017E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6C0EA1D3-58EB-4015-948C-131EF34200A7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AD24F51-8416-47DB-8316-5702F7036E17</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A1AC3CF0-5B59-4241-B9CD-6EE6787017E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0A0CB3C9-0D87-4B0D-A926-894FEE2A53B9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DA5E09C2-4618-44AA-890A-E46945C4F947</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AD24F51-8416-47DB-8316-5702F7036E17</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>CodeLens</string>
+	<key>description</key>
+	<string>Copy, kill or terminate a process</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Process query</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>pid=${1% *}
+term=${1#* }
+
+if [ -z "$term" ]; then
+	echo "No term defined :(" &gt;&amp;2
+	exit 1
+fi
+
+TERM_PROGRESS="Terminating"
+TERM_FINISHED="terminated"
+
+if [ "$term" == "-9" ]; then
+	TERM_PROGRESS="Killing"
+	TERM_FINISHED="killed"
+fi
+
+kill $term $pid
+if ps ax | grep -q "^${pid} "; then
+	echo -n "${TERM_PROGRESS} process (${pid}) FAILED!!!"
+else
+	echo -n "Process (${pid}) has been ${TERM_FINISHED}"
+fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0AD24F51-8416-47DB-8316-5702F7036E17</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:command}</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>DA483AFC-4A46-466D-B9D7-2355C2998064</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>pid</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>DA5E09C2-4618-44AA-890A-E46945C4F947</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>pid</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>6C0EA1D3-58EB-4015-948C-131EF34200A7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:command}</string>
+				<key>title</key>
+				<string>PID {query} copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0A0CB3C9-0D87-4B0D-A926-894FEE2A53B9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>proc</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Fetching process list</string>
+				<key>script</key>
+				<string>MAX_ITEMS=20
+PREDICATE=""
+SORT=""
+REV="| tail -r"
+
+while [ ! -z "$1" ]; do
+	if [[ "$1" =~ ^@.*  ]]; then
+		if [ "$1" == "@cpu" ]; then
+			SORT="-r"
+			REV=""
+		elif [ "$1" == "@mem" ]; then
+			SORT="-m"
+			REV=""
+		fi
+		shift
+	else
+	    PREDICATE="${PREDICATE} | grep -i '$1'"
+		shift
+	fi
+done
+
+PROCLIST="$(eval "ps ${SORT} -axo pid=,user=,command= ${PREDICATE} ${REV} | grep -i -v '[a]lfred' | head -n ${MAX_ITEMS}")"
+
+echo '{"items": ['
+ITEM_COUNT=0
+while read -r line; do
+    read PID USER COMMAND &lt;&lt;&lt; "$line"
+    [ $ITEM_COUNT -gt 0 ] &amp;&amp; echo -n ","
+    echo "{"
+    cat &lt;&lt;EOF
+        "arg": "${PID}",
+        "title": "${COMMAND}",
+        "subtitle": "${PID} (${USER})",
+        "text": {
+            "copy": "${PID} ${USER} ${COMMAND}",
+            "largetype": "${PID} ${USER} ${COMMAND}"
+        },
+		"variables": {
+			"command": "${COMMAND}"
+		},
+		"mods": {
+			"ctrl": {
+				"arg": "${PID} -9",
+				"subtitle": "Terminalte process with -9 (SIGKILL)"
+			},
+			"cmd": {
+				"arg": "${PID} -15",
+				"subtitle": "Terminalte process with -15 (SIGTERM)"
+			}
+		}
+    }
+EOF
+	let ITEM_COUNT++
+done &lt;&lt;&lt; "${PROCLIST}"
+echo ']}'
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Select filtered OS process to copy pid or kill</string>
+				<key>title</key>
+				<string>List OS process</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>39BDC56A-47C8-4D0E-B28A-71BF31164D24</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>A1AC3CF0-5B59-4241-B9CD-6EE6787017E6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>0A0CB3C9-0D87-4B0D-A926-894FEE2A53B9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>620</integer>
+			<key>ypos</key>
+			<integer>230</integer>
+		</dict>
+		<key>0AD24F51-8416-47DB-8316-5702F7036E17</key>
+		<dict>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>70</integer>
+		</dict>
+		<key>39BDC56A-47C8-4D0E-B28A-71BF31164D24</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>230</integer>
+		</dict>
+		<key>6C0EA1D3-58EB-4015-948C-131EF34200A7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>A1AC3CF0-5B59-4241-B9CD-6EE6787017E6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>230</integer>
+		</dict>
+		<key>DA483AFC-4A46-466D-B9D7-2355C2998064</key>
+		<dict>
+			<key>xpos</key>
+			<integer>620</integer>
+			<key>ypos</key>
+			<integer>70</integer>
+		</dict>
+		<key>DA5E09C2-4618-44AA-890A-E46945C4F947</key>
+		<dict>
+			<key>xpos</key>
+			<integer>280</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

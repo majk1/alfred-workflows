@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.codelens.alfred.unicode</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>9CEB1D78-BAED-4199-A392-9DC2DAA3D117</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>4EB931C7-2E61-4B3E-A0F5-E4044CBC72BD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>AAFECF0A-4CC1-4841-A258-FB270264114E</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy unicode value</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D146DEA0-67AF-4722-91FC-2C331D3EED10</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy html entity value</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>CodeLens</string>
+	<key>description</key>
+	<string>Unicode symbol search by description</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Unicode symbol search</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>uni</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>filtering unicode symbols</string>
+				<key>script</key>
+				<string>query=$1
+
+expot PYTHONIOENCODING=utf-8
+
+first=1
+echo "{\"items\": ["
+while read line; do
+	eval "$(echo "$line" | sed 's/^\(.\),\([^,]*\),\([^,]*\),\(.*\)/symbol="\1";unicode="\2";html="\3";description="\4"/')";
+
+	[ $first -eq 1 ] &amp;&amp; first=0 || echo ","
+	cat &lt;&lt;EOF
+	{
+		"uid": "unicode_symbol_${unicode}",
+		"arg": "${symbol}",
+		"title": "${symbol}",
+		"subtitle": "${unicode} ${html} ${description}",
+		"text": {
+			"copy": "${symbol}",
+			"largetype": "${symbol} - ${unicode}"
+		},
+		"variables": {
+			"unicode": "${unicode}",
+			"html": "${html}"
+		}
+	}
+EOF
+done &lt; &lt;(./unicode.py $query | tr '\t' ',')
+echo "]}"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>search for symbol name</string>
+				<key>title</key>
+				<string>symbol name</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>9CEB1D78-BAED-4199-A392-9DC2DAA3D117</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>4EB931C7-2E61-4B3E-A0F5-E4044CBC72BD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:unicode}</string>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>AAFECF0A-4CC1-4841-A258-FB270264114E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{var:html}</string>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>D146DEA0-67AF-4722-91FC-2C331D3EED10</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>4EB931C7-2E61-4B3E-A0F5-E4044CBC72BD</key>
+		<dict>
+			<key>xpos</key>
+			<integer>310</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>9CEB1D78-BAED-4199-A392-9DC2DAA3D117</key>
+		<dict>
+			<key>xpos</key>
+			<integer>60</integer>
+			<key>ypos</key>
+			<integer>50</integer>
+		</dict>
+		<key>AAFECF0A-4CC1-4841-A258-FB270264114E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>310</integer>
+			<key>ypos</key>
+			<integer>180</integer>
+		</dict>
+		<key>D146DEA0-67AF-4722-91FC-2C331D3EED10</key>
+		<dict>
+			<key>xpos</key>
+			<integer>310</integer>
+			<key>ypos</key>
+			<integer>310</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

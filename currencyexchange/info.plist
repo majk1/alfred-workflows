@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.codeles.alfred.currencyexchange</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>39BDC56A-47C8-4D0E-B28A-71BF31164D24</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51203C35-A6DE-49C6-819D-1E5C7EE01AE7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>51203C35-A6DE-49C6-819D-1E5C7EE01AE7</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>CodeLens</string>
+	<key>description</key>
+	<string>Currency exchange with optional tax calculator</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Currency exchange</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>1</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>curr</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Evaluating currency exchange</string>
+				<key>script</key>
+				<string>PARAMS=($1)
+
+if [ "${#PARAMS[@]}" -lt 3 ]; then
+	echo "{\"items\": [{"
+cat &lt;&lt;EOF
+        "uid": "result",
+        "arg": "${PARAM[@]}",
+        "title": "Not enough parameters",
+        "subtitle": "Not enough parameters - sub",
+        "text": {
+            "copy": "Not enough parameters - copy",
+            "largetype": "Not enough parameters - large"
+        }
+    }
+EOF
+	echo "]}"
+else
+
+TO_CURR_UP="$(echo "${PARAMS[2]}" | tr '[a-z]' '[A-Z]')"
+
+RESULT_LONG="$(./currency-exchange.sh ${PARAMS[0]} ${PARAMS[1]} ${PARAMS[2]} ${PARAMS[3]} 2&gt;/dev/null)"
+RESULT_SHORT="$(./currency-exchange.sh -s ${PARAMS[0]} ${PARAMS[1]} ${PARAMS[2]} ${PARAMS[3]})"
+RESULT_FORMATTED="$RESULT_SHORT"
+
+if [ $? -ne 0 ]; then
+	RESULT_SHORT="invalid parameters"
+	RESULT_LONG="Usage: curr &lt;amount&gt; &lt;from currency&gt; &lt;to currency&gt; [tax percentage]"
+	TO_CURR_UP=""
+else
+	RESULT_FORMATTED="$(./format-number.sh "$RESULT_SHORT")"
+fi
+
+echo "{\"items\": [{"
+    cat &lt;&lt;EOF
+        "arg": "${RESULT_SHORT}",
+        "title": "${RESULT_FORMATTED} ${TO_CURR_UP}",
+        "subtitle": "${RESULT_LONG}",
+        "text": {
+            "copy": "${RESULT_SHORT}",
+            "largetype": "${RESULT_LONG}"
+        }
+    }
+EOF
+echo "]}"
+
+fi
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>curr {amount: 10} {from: USD} {to: EUR} [optional tax percent: 19]</string>
+				<key>title</key>
+				<string>Currency exchange</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>39BDC56A-47C8-4D0E-B28A-71BF31164D24</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>51203C35-A6DE-49C6-819D-1E5C7EE01AE7</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>39BDC56A-47C8-4D0E-B28A-71BF31164D24</key>
+		<dict>
+			<key>xpos</key>
+			<integer>110</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>51203C35-A6DE-49C6-819D-1E5C7EE01AE7</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>

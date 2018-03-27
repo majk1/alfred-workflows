@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>io.codelens.alfred.maven</string>
+	<key>category</key>
+	<string>Productivity</string>
+	<key>connections</key>
+	<dict>
+		<key>0C193587-A976-4B7A-AA53-E4EA891640A6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9C39DA4F-24DD-49AC-86A6-0796B6F135A9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>350FD1DC-C368-4B5C-90CF-140D8CD2F76B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D1953778-00DC-4D9F-934E-AAD3E275A8F1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>41CB6C36-963D-4403-8656-2ACE1D96CD00</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>350FD1DC-C368-4B5C-90CF-140D8CD2F76B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>51FF84BB-DD80-4198-8987-3A11EAC64E4E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B88ACB11-4EB8-44DA-8A71-A08C80838775</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>63F835D8-C722-4CD5-B479-0D9D003BEF09</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4ADAAC6-5976-49D2-A8CB-A0BE0D075EB4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>642AA3F9-48A6-4561-B6D9-A65E2D98252A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51FF84BB-DD80-4198-8987-3A11EAC64E4E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7EBB7DB4-115F-455B-9786-4A22AB5E6476</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7E867BCD-202A-4261-86A6-9CDC0373120A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>796E0307-D9E9-439A-9E5D-5C40D149C086</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>7EBB7DB4-115F-455B-9786-4A22AB5E6476</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>88CA9DFF-C636-4389-9563-06DAB1A47C68</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>88CA9DFF-C636-4389-9563-06DAB1A47C68</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C4EC7BF5-4443-403E-B694-F4D733D93DED</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9C39DA4F-24DD-49AC-86A6-0796B6F135A9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FB1E8230-49B1-41C1-A64C-09DA9D76024F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>63F835D8-C722-4CD5-B479-0D9D003BEF09</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B2F5E288-40AC-4694-BAA3-4AFA3D67D869</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BF79C6B7-494B-48AC-9E5E-11CEFC48F1AF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B88ACB11-4EB8-44DA-8A71-A08C80838775</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>41CB6C36-963D-4403-8656-2ACE1D96CD00</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BF79C6B7-494B-48AC-9E5E-11CEFC48F1AF</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EC2AC1ED-933F-4C57-BA66-4CD78A89D8A8</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C1560171-49B4-4DF4-AD4C-630853C660B0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5378A327-73A9-4BF2-9855-C591C6F3F463</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C4EC7BF5-4443-403E-B694-F4D733D93DED</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0C193587-A976-4B7A-AA53-E4EA891640A6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D1953778-00DC-4D9F-934E-AAD3E275A8F1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7E867BCD-202A-4261-86A6-9CDC0373120A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>EF447AA3-FFD2-464A-A986-59420E3A343F</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy maven dependecy XML</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2F5E288-40AC-4694-BAA3-4AFA3D67D869</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Copy only the version</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>EF447AA3-FFD2-464A-A986-59420E3A343F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C1560171-49B4-4DF4-AD4C-630853C660B0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FB1E8230-49B1-41C1-A64C-09DA9D76024F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>028BA2CA-4460-4F4E-B190-0A9136C2D421</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>CodeLens</string>
+	<key>description</key>
+	<string>Maven tools to search repositories and create pom.xml by templates</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Maven search and create</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Maven GAV copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>796E0307-D9E9-439A-9E5D-5C40D149C086</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>7E867BCD-202A-4261-86A6-9CDC0373120A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>gav="$1"
+gid_aid="${gav%:*}"
+version="${gav##*:}"
+group_id="${gid_aid%:*}"
+artifact_id="${gid_aid#*:}"
+
+cat &lt;&lt; EOF
+&lt;dependency&gt;
+	&lt;groupId&gt;${group_id}&lt;/groupId&gt;
+	&lt;artifactId&gt;${artifact_id}&lt;/artifactId&gt;
+	&lt;version&gt;${version}&lt;/version&gt;
+&lt;/dependency&gt;
+EOF</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EF447AA3-FFD2-464A-A986-59420E3A343F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>mvn search</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching repository</string>
+				<key>script</key>
+				<string>#!/bin/bash
+
+export PATH="$PATH:/opt/local/bin"
+
+search="$1"
+
+first=1
+echo "{\"items\": ["
+while read line; do
+	gid_aid="${line%::*}"
+	name="${line##*::}"
+	group_id="${gid_aid%:*}"
+	artifact_id="${gid_aid#*:}"
+
+	[ $first -eq 1 ] &amp;&amp; first=0 || echo ","
+
+	cat &lt;&lt;EOF
+	{
+		"arg": "${gid_aid}",
+		"title": "${name}",
+		"subtitle": "${group_id} : ${artifact_id}",
+		"text": {
+			"copy": "${gid_aid}",
+			"largetype": "${gid_aid}"
+		}
+	}
+EOF
+done &lt; &lt;(./mvn-search.sh search "$search")
+echo "]}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search group id, artifact id or name</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>41CB6C36-963D-4403-8656-2ACE1D96CD00</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching repository</string>
+				<key>script</key>
+				<string>#!/bin/bash
+
+export PATH="$PATH:/opt/local/bin"
+
+gid_aid="$1"
+group_id="${gid_aid%:*}"
+artifact_id="${gid_aid#*:}"
+
+first=1
+echo "{\"items\": ["
+for ver in $(./mvn-search.sh version "$group_id" "$artifact_id"); do
+	[ $first -eq 1 ] &amp;&amp; first=0 || echo ","
+
+	cat &lt;&lt;EOF
+	{
+		"arg": "${gid_aid}:${ver}",
+		"title": "${ver}",
+		"subtitle": "${group_id} : ${artifact_id} : ${ver}",
+		"text": {
+			"copy": "${gid_aid}:${ver}",
+			"largetype": "${gid_aid}:${ver}"
+		}
+	}
+EOF
+done
+echo "]}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Search versions</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D1953778-00DC-4D9F-934E-AAD3E275A8F1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Maven dependency copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>5378A327-73A9-4BF2-9855-C591C6F3F463</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>C1560171-49B4-4DF4-AD4C-630853C660B0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>search</string>
+				<key>replacestring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>B88ACB11-4EB8-44DA-8A71-A08C80838775</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>search</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>51FF84BB-DD80-4198-8987-3A11EAC64E4E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>versions</string>
+				<key>replacestring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>350FD1DC-C368-4B5C-90CF-140D8CD2F76B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>BF79C6B7-494B-48AC-9E5E-11CEFC48F1AF</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Maven artifact version copied to clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EC2AC1ED-933F-4C57-BA66-4CD78A89D8A8</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>gav="$1"
+echo "${gav##*:}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B2F5E288-40AC-4694-BAA3-4AFA3D67D869</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>fixedorder</key>
+				<false/>
+				<key>items</key>
+				<string>[{"imagefile":"d36f4e61950a09fe942afaa7084817639ec0f8ea.png","title":"Search","arg":"search","subtitle":"Search maven repositories"},{"imagefile":"a2d4792466de07f185ed476a983d0f450d3e3e03.png","title":"Generate","arg":"generate","subtitle":"Generate maven pom.xml from template"}]</string>
+				<key>keyword</key>
+				<string>maven</string>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Select maven action</string>
+				<key>title</key>
+				<string>Maven actions</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>642AA3F9-48A6-4561-B6D9-A65E2D98252A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>028BA2CA-4460-4F4E-B190-0A9136C2D421</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query="$1"
+
+template="${query% *}"
+gid_aid="${query#* }"
+groupId="${gid_aid%%:*}"
+artifactId="${gid_aid#*:}"
+
+cat ~/.m2/templates/$template | sed "s/{var:artifactId}/${artifactId}/" | sed "s/{var:groupId}/${groupId}/"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>FB1E8230-49B1-41C1-A64C-09DA9D76024F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>subtext</key>
+				<string>format: group_id:artifact_id</string>
+				<key>text</key>
+				<string>specify group and artifact id to substitue into pom.xml</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>9C39DA4F-24DD-49AC-86A6-0796B6F135A9</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>mvn template</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>1</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Listing templates</string>
+				<key>script</key>
+				<string>#!/bin/bash
+
+query="$1"
+
+if [ ! -d ~/.m2/templates ]; then
+	exit 1
+fi
+
+cd ~/.m2/templates
+
+first=1
+echo "{\"items\": ["
+for template in *; do
+	if [[ $template =~ .*${query}.* ]]; then
+	[ $first -eq 1 ] &amp;&amp; first=0 || echo ","
+
+	cat &lt;&lt;EOF
+	{
+		"uid": "maven-pom-xml-template",
+		"arg": "${template}",
+		"title": "${template}",
+		"subtitle": "${template}",
+		"text": {
+			"copy": "${template}",
+			"largetype": "${template}"
+		}
+	}
+EOF
+	fi
+done
+echo "]}"
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Generate pom.xml from template</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C4EC7BF5-4443-403E-B694-F4D733D93DED</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>generate</string>
+				<key>replacestring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.replace</string>
+			<key>uid</key>
+			<string>88CA9DFF-C636-4389-9563-06DAB1A47C68</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>variables</key>
+				<dict>
+					<key>template</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>0C193587-A976-4B7A-AA53-E4EA891640A6</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>generate</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>7EBB7DB4-115F-455B-9786-4A22AB5E6476</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+template="${query% *}"
+gid_aid="${query#* }"
+groupId="${gid_aid%%:*}"
+artifactId="${gid_aid#*:}"
+
+echo "{
+  \"alfredworkflow\" : {
+    \"arg\" : \"$1\",
+    \"config\" : {
+    },
+    \"variables\" : {
+      \"groupId\": \"${groupId}\",
+      \"artifactId\": \"${artifactId}\",
+      \"template\": \"${template}\"
+    }
+  }
+}"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>63F835D8-C722-4CD5-B479-0D9D003BEF09</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:groupId} : {var:artifactId}</string>
+				<key>title</key>
+				<string>pom.xml ({var:template}) copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D4ADAAC6-5976-49D2-A8CB-A0BE0D075EB4</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>028BA2CA-4460-4F4E-B190-0A9136C2D421</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1050</integer>
+			<key>ypos</key>
+			<integer>480</integer>
+		</dict>
+		<key>0C193587-A976-4B7A-AA53-E4EA891640A6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>570</integer>
+		</dict>
+		<key>350FD1DC-C368-4B5C-90CF-140D8CD2F76B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>570</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>41CB6C36-963D-4403-8656-2ACE1D96CD00</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>51FF84BB-DD80-4198-8987-3A11EAC64E4E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>5378A327-73A9-4BF2-9855-C591C6F3F463</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1220</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>63F835D8-C722-4CD5-B479-0D9D003BEF09</key>
+		<dict>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>600</integer>
+		</dict>
+		<key>642AA3F9-48A6-4561-B6D9-A65E2D98252A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>40</integer>
+			<key>ypos</key>
+			<integer>360</integer>
+		</dict>
+		<key>796E0307-D9E9-439A-9E5D-5C40D149C086</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1050</integer>
+			<key>ypos</key>
+			<integer>60</integer>
+		</dict>
+		<key>7E867BCD-202A-4261-86A6-9CDC0373120A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>60</integer>
+		</dict>
+		<key>7EBB7DB4-115F-455B-9786-4A22AB5E6476</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>570</integer>
+		</dict>
+		<key>88CA9DFF-C636-4389-9563-06DAB1A47C68</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>570</integer>
+		</dict>
+		<key>9C39DA4F-24DD-49AC-86A6-0796B6F135A9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>640</integer>
+			<key>ypos</key>
+			<integer>540</integer>
+		</dict>
+		<key>B2F5E288-40AC-4694-BAA3-4AFA3D67D869</key>
+		<dict>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>B88ACB11-4EB8-44DA-8A71-A08C80838775</key>
+		<dict>
+			<key>xpos</key>
+			<integer>330</integer>
+			<key>ypos</key>
+			<integer>200</integer>
+		</dict>
+		<key>BF79C6B7-494B-48AC-9E5E-11CEFC48F1AF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1050</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>C1560171-49B4-4DF4-AD4C-630853C660B0</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1050</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>C4EC7BF5-4443-403E-B694-F4D733D93DED</key>
+		<dict>
+			<key>xpos</key>
+			<integer>410</integer>
+			<key>ypos</key>
+			<integer>540</integer>
+		</dict>
+		<key>D1953778-00DC-4D9F-934E-AAD3E275A8F1</key>
+		<dict>
+			<key>xpos</key>
+			<integer>640</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>D4ADAAC6-5976-49D2-A8CB-A0BE0D075EB4</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1050</integer>
+			<key>ypos</key>
+			<integer>600</integer>
+		</dict>
+		<key>EC2AC1ED-933F-4C57-BA66-4CD78A89D8A8</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1220</integer>
+			<key>ypos</key>
+			<integer>280</integer>
+		</dict>
+		<key>EF447AA3-FFD2-464A-A986-59420E3A343F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>170</integer>
+		</dict>
+		<key>FB1E8230-49B1-41C1-A64C-09DA9D76024F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>880</integer>
+			<key>ypos</key>
+			<integer>480</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
